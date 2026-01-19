@@ -1,6 +1,4 @@
-<p align="right">
-    <a href="https://narenthiranmathavaraj.github.io/" target="_blank">✨ View Live Preview</a>
-</p>
+<a href="https://narenthiranmathavaraj.github.io/" target="_blank">**✨ View Live Preview**</a>
 
 # Narenthiran's Portfolio Template ^_-
 
