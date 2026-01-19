@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Robot | Portfolio</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0e27%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2255%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300d9ff%22>^_-</text></svg>">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project Detail Specific Styles */
+        .project-detail-container {
+            padding: 120px 20px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-header-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-mesh">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">^_-</a>
+                <div class="logo-fact-bubble" id="logo-fact-bubble">
+                    <span id="logo-fact-text"></span><span class="logo-cursor">|</span>
+                </div>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail-container">
+        <a href="../index.html#projects" class="back-link btn-link back"><span>Back to Projects</span></a>
+
+        <header class="project-hero">
+            <h1>Autonomous Agricultural Robot</h1>
+            <div class="tech-stack-icons">
+                <span class="tech-icon" title="ROS2">ROS2</span>
+                <span class="tech-icon" title="Nav2">Nav2</span>
+                <span class="tech-icon" title="Python">Python</span>
+                <span class="tech-icon" title="RL">RL</span>
+            </div>
+        </header>
+
+        <!-- 1. HERO MEDIA (Video Loop / Placeholder) -->
+        <div class="project-media-hero" onclick="playInlineVideo(this)"
+            data-video-src="https://www.youtube.com/embed/ORO_VRz-6Fs">
+            <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <p>Follow Me Feature Demonstration</p>
+            </div>
+        </div>
+
+        <!-- 2. MAIN BENTO GRID -->
+        <div class="project-content-grid">
+
+            <!-- Card 1: Main Overview (Wide) -->
+            <div class="bento-card col-span-2">
+                <h3>📝 Executive Summary</h3>
+                <p class="bento-text">
+                    This project focuses on <strong>autonomous navigation in unstructured agricultural
+                        environments</strong>, where
+                    robots must distinguish between <strong>traversable vegetation</strong>, <strong>non-lethal
+                        obstacles</strong> (e.g., tall grass and
+                    branches), and <strong>lethal obstacles</strong> (e.g., humans and trees), while dynamically
+                    adapting to <strong>varying
+                        terrain traversability</strong> such as grassy versus rocky regions.
+                    <br><br>
+                    I am developing a <strong>Nav2-based ROS stack for UGV</strong> that fuses <strong>LiDAR and RGB-D
+                        data</strong> to
+                    create <strong>adaptive costmaps</strong> unlike heightmaps to navigate through agricultural fields
+                    autonomously.
+                </p>
+            </div>
+
+            <!-- Card 2: Key Stat (Tall) -->
+            <div class="bento-card stat-card">
+                <div>
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Number of Human Interventions</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Key Features (Tall) -->
+            <div class="bento-card row-span-2">
+                <h3>🎯 Key Features</h3>
+                <ul class="bento-features">
+                    <li><strong>Follow-Me Mode</strong>: Robust person tracking even with occlusions (using Yolo11 and
+                        YoloE).</li>
+                    <li><strong>Unmaned Ground Vehicle</strong>: RigBetel Labs' Diadem.</li>
+                    <li><strong>Sensor Fusion</strong>: Velodyne LiDAR + Realsense RGB-D Camera.</li>
+                    <li><strong>RL Navigation</strong>: Custom PPO agent for terrain analysis.</li>
+                    <li><strong>Mapless</strong>: Operates without prior 2d occupancy grid static map.</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Architecture Diagram (Wide) -->
+            <div class="bento-card col-span-2 clickable-media" onclick="openMediaLightbox(this)"
+                data-title="System Architecture" data-desc="Follow-Me Mode System Architecture">
+                <h3>⚙️ System Architecture</h3>
+                <div class="flowchart-bento">
+                    <!-- [System Architecture Diagram: Sensors -> Fusion -> Planner -> Control] -->
+                    <img src="../assets/images/projects/autonomous-robot/autonomous_block_diagram.png"
+                        alt="System Architecture Diagram" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <div class="media-caption">Follow-Me Mode System Architecture</div>
+
+            </div>
+
+            <!-- Card 5: Media -->
+            <div class="bento-card clickable-media" onclick="openMediaLightbox(this)" data-title="Diadem Robot"
+                data-desc="Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted on it.">
+                <h3>🏞️ Diadem Robot</h3>
+                <div class="media-placeholder">
+                    <!-- Placeholder for Costmap GIF -->
+                    <!-- Diadem's Picture with sensors mounted on it. -->
+                    <img src="../assets/images/projects/autonomous-robot/diadem_with_sensors.png"
+                        alt="Diadem with sensors mounted on it." style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <div class="media-caption">Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted
+                    on it.
+                </div>
+            </div>
+
+            <!-- Card 6: Challenges -->
+            <div class="bento-card">
+                <h3>🚩 Challenges</h3>
+                <p class="bento-text">
+                    Researching optimal approaches to implement <strong>adaptive costmaps</strong> for agricultural
+                    fields using
+                    <strong>reinforcement learning</strong>, with a focus on <strong>safe operation</strong> in
+                    environments shared with humans.
+                </p>
+            </div>
+
+            <!-- Card 7: Git Link -->
+            <!-- Removed 'stat-card' class so this button DOES NOT glow -->
+            <!-- <div class="bento-card"
+                style="background: rgba(0,217,255,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center;"
+                onclick="window.open('https://github.com/narenthiranmathavaraj/Autonomous-Robot', '_blank')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-github" style="font-size: 2rem; color: var(--primary);"></i>
+                    <span class="stat-label" style="display: block; font-size: 1.2rem; margin: 0;">View Code</span>
+                </div>
+            </div> -->
+
+        </div>
+
+        <div class="project-actions">
+            <a href="../index.html#projects" class="btn btn-secondary back">Back to Projects</a>
+            <a href="lcm_iitm.html" class="btn btn-primary">Next Project</a>
+        </div>
+
+
+
+    </main>
+
+    <!-- Fun Footer -->
+    <footer class="fun-footer">
+        <p>Feel free to build your homepage upon my <a href="https://github.com/narenthiranmathavaraj/narenthiranmathavaraj.github.io" target="_blank"
+                style="color: inherit; text-decoration: underline;">template</a> :)</p>
+        <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Copyright © 2026 Narenthiran Mathavaraj</p>
+    </footer>
+
+    <script src="../js/gallery.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

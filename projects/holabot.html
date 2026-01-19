@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Bot | Portfolio</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0e27%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2255%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300d9ff%22>^_-</text></svg>">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project Detail Specific Styles */
+        .project-detail-container {
+            padding: 120px 20px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-header-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-mesh">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">^_-</a>
+                <div class="logo-fact-bubble" id="logo-fact-bubble">
+                    <span id="logo-fact-text"></span><span class="logo-cursor">|</span>
+                </div>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail-container">
+        <a href="../index.html#projects" class="back-link btn-link back"><span>Back to Projects</span></a>
+
+        <header class="project-hero">
+            <h1>Hola Bot (Holonomic Robot)</h1>
+            <div class="tech-stack-icons">
+                <span class="tech-icon" title="ROS1">ROS1</span>
+                <span class="tech-icon" title="OpenCV">OpenCV</span>
+                <span class="tech-icon" title="Fusion 360">Fusion 360</span>
+            </div>
+        </header>
+
+        <!-- 1. HERO MEDIA -->
+        <div class="project-media-hero" onclick="playInlineVideo(this)"
+            data-video-src="https://www.youtube.com/embed/VyxVxZbrzww">
+            <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <p>Hola Bot in Action - Drawing Artworks</p>
+            </div>
+        </div>
+
+        <!-- 2. MAIN BENTO GRID -->
+        <div class="project-content-grid">
+
+            <!-- Card 1: Overview -->
+            <div class="bento-card col-span-2">
+                <h3>📝 Executive Summary</h3>
+                <p class="bento-text">
+                    Hola Bot is a <strong>3-wheel omnidirectional robot</strong> design to execute complex
+                    <strong>planar
+                        trajectories (3-DOF)</strong>.
+                    The robot uses <strong>visual feedback</strong> to "draw" artwork on the canvas.
+                    <br><br>
+                    It combines <strong>ArUco marker localization</strong> with <strong>PD control loops</strong> to
+                    correct path errors
+                    in real-time,
+                    bridging the gap between <strong>high-level path planning</strong> and <strong>low-level motor
+                        actuation</strong>.
+                </p>
+            </div>
+
+            <!-- Card 2: Stat -->
+            <div class="bento-card stat-card">
+                <div>
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Degrees of Freedom</span>
+                    <span class="stat-label">Holonomic Drive</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Features -->
+            <div class="bento-card row-span-2">
+                <h3>🎯 Key Features</h3>
+                <ul class="bento-features">
+                    <li><strong>Holonomic Motion</strong>: <strong>Instant movement</strong> in any x, y, theta
+                        direction.</li>
+                    <li><strong>Visual Servoing</strong>: Real-time <strong>pose estimation</strong> via overhead camera
+                        (ArUco).</li>
+                    <li><strong>PD Control</strong>: Tuned <strong>control loops</strong> for precise curve tracing.
+                    </li>
+                    <li><strong>WiFi Bridge</strong>: Custom communication between <strong>ROS Desktop & eYFi-Mega
+                            ESP32</strong>.</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Architecture -->
+            <div class="bento-card col-span-2 clickable-media" onclick="openMediaLightbox(this)"
+                data-title="System Architecture">
+                <h3>⚙️ System Architecture</h3>
+                <div class="flowchart-bento">
+                    <!-- Cam -> OpenCV -> ROS Planner -> WiFi -> ESP32 -> Motors -->
+                    <img src="../assets/images/projects/holabot/holabot_flow_chart.png" alt="System Architecture"
+                        style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+
+            <!-- Card 5: Media -->
+            <div class="bento-card clickable-media" onclick="openMediaLightbox(this)" data-title="Diadem Robot">
+                <h3>🏞️ HolaBot CAD Render</h3>
+                <div class="media-placeholder">
+                    <!-- Placeholder for Costmap GIF -->
+                    <!-- Diadem's Picture with sensors mounted on it. -->
+                    <img src="../assets/images/projects/holabot/holabot_cad_render.jpeg"
+                        alt="Diadem with sensors mounted on it." style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <div class="media-caption">Rendered on Fusion 360.</div>
+            </div>
+
+            <!-- Card 6: Challenges -->
+            <div class="bento-card">
+                <h3>🚩 Results</h3>
+                <p class="bento-text">
+                    Successfully fabricated the Hola Bot, which autonomously drew multiple vector art designs.
+                    Semi-Finalist in the Eyantra Robotics Competition, conducted by Indian Institute of Technology
+                    Bombay (IIT - Bombay).
+                </p>
+            </div>
+
+            <!-- Card 7: Git Link -->
+            <!-- Removed 'stat-card' class so this button DOES NOT glow -->
+            <div class="bento-card"
+                style="background: rgba(0,217,255,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center;"
+                onclick="window.open('https://github.com/narenthiranmathavaraj/HolaBot', '_blank')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-github" style="font-size: 2rem; color: var(--primary);"></i>
+                    <span class="stat-label" style="display: block; font-size: 1.2rem; margin: 0;">View Code</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="project-actions">
+            <a href="turtlesim.html" class="btn btn-secondary back">Previous Project</a>
+            <a href="cots_iitb.html" class="btn btn-primary">Next Project</a>
+        </div>
+    </main>
+
+    <!-- Fun Footer -->
+    <footer class="fun-footer">
+        <p>Feel free to build your homepage upon my <a href="https://github.com/narenthiranmathavaraj/narenthiranmathavaraj.github.io" target="_blank"
+                style="color: inherit; text-decoration: underline;">template</a> :)</p>
+        <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Copyright © 2026 Narenthiran Mathavaraj</p>
+    </footer>
+
+
+    <script src="../js/gallery.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

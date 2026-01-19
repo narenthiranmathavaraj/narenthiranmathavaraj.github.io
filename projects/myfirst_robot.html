@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Following robot [my first robotic project] | Portfolio</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0e27%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2255%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300d9ff%22>^_-</text></svg>">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project Detail Specific Styles */
+        .project-detail-container {
+            padding: 120px 20px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-header-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-mesh">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">^_-</a>
+                <div class="logo-fact-bubble" id="logo-fact-bubble">
+                    <span id="logo-fact-text"></span><span class="logo-cursor">|</span>
+                </div>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail-container">
+        <a href="../index.html#projects" class="back-link btn-link back"><span>Back to Projects</span></a>
+
+        <header class="project-hero">
+            <h1>Line Following robot [my first robotic project]</h1>
+            <div class="tech-stack-icons">
+                <span class="tech-icon" title="Arduino">Arduino</span>
+            </div>
+        </header>
+
+        <!-- 1. HERO MEDIA -->
+        <div class="project-media-hero" onclick="playInlineVideo(this)"
+            data-video-src="https://www.youtube.com/embed/29C0nCvY29g">
+            <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <p>Line Follower - Test Run</p>
+            </div>
+        </div>
+
+        <!-- 2. MAIN BENTO GRID -->
+        <div class="project-content-grid">
+
+            <!-- Card 1: Overview -->
+            <div class="bento-card col-span-2">
+                <h3>📝 Executive Summary</h3>
+                <p class="bento-text">
+                    This project involves the design and development of a simple <strong>line-following robot</strong>
+                    capable of
+                    autonomously following a black line. The robot’s <strong>infrared (IR) sensors</strong> were
+                    <strong>calibrated by hardcoding
+                        intensity values</strong> to reliably differentiate between black and other colors, enabling
+                    <strong>accurate line
+                        tracking</strong>. This project demonstrates fundamental concepts in <strong>sensor-based
+                        autonomous navigation</strong> and
+                    <strong>embedded system control</strong>.
+                </p>
+            </div>
+
+            <!-- Card 2: Stat -->
+            <div class="bento-card stat-card">
+                <div>
+                    <span class="stat-number">1st</span>
+                    <span class="stat-label">Project</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Features -->
+            <div class="bento-card">
+                <h3>🎯 Key Features</h3>
+                <ul class="bento-features">
+                    <li><strong>Hardware</strong>: Electrical mica board chassis, 9V batteries, Arduino Uno, H-Bridge
+                        shield, DC motors, and IR sensors.</li>
+                    <li><strong>Control Logic</strong>: Basic Arduino loops to turn left or right based on IR sensor
+                        detection of the track.</li>
+                    <li><strong>Autonomous Navigation</strong>: Enables the robot to follow a black line using
+                        sensor-based feedback.</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Architecture -->
+            <!-- <div class="bento-card col-span-2">
+                <h3>⚙️ System Architecture</h3>
+                <div class="flowchart-bento">
+                    Cam -> OpenCV -> ROS Planner -> WiFi -> ESP32 -> Motors
+                </div>
+            </div> -->
+
+            <!-- Card 5: Media -->
+            <!-- <div class="bento-card media-card-bento clickable-media" onclick="openMediaLightbox(this)"
+                data-title="Robot Prototype" data-desc="First working prototype of line following robot.">
+                <div class="media-placeholder" style="background: linear-gradient(45deg, #2a2f4a, #1a1f3a);">
+                    Robot Photo
+                </div>
+                <div class="media-caption-overlay">Robot Photo</div>
+            </div> -->
+
+            <!-- Card 6: Results -->
+            <div class="bento-card col-span-2">
+                <h3>🚩 Results</h3>
+                <p class="bento-text">
+                    The robot successfully followed a black line using the <strong>calibrated IR sensors</strong>.
+                    <br><br>
+                    The sheer joy of <strong>Building and Watching the robot come to life</strong>, this Tiny Project
+                    born out of boredom
+                    during the <strong>COVID-19 Pandemic</strong>, made me realize my passion for <strong>Electronics
+                        and Robotics</strong>.
+                </p>
+            </div>
+
+            <!-- Card 7: Git Link -->
+            <!-- <div class="bento-card stat-card"
+                style="background: rgba(0,217,255,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center;"
+                onclick="window.open('https://github.com/narenthiranmathavaraj/My-First-Robot', '_blank')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-github" style="font-size: 2rem; color: var(--primary);"></i>
+                    <span class="stat-label" style="display: block; font-size: 1.2rem; margin: 0;">View Code</span>
+                </div>
+            </div> -->
+
+
+        </div>
+
+        <div class="project-actions">
+            <a href="cots_iitb.html" class="btn btn-secondary back">Previous Project</a>
+            <a href="../index.html#projects" class="btn btn-primary">Back to Projects</a>
+        </div>
+    </main>
+
+    <!-- Fun Footer -->
+    <footer class="fun-footer">
+        <p>Feel free to build your homepage upon my <a href="https://github.com/narenthiranmathavaraj/narenthiranmathavaraj.github.io" target="_blank"
+                style="color: inherit; text-decoration: underline;">template</a> :)</p>
+        <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Copyright © 2026 Narenthiran Mathavaraj</p>
+    </footer>
+
+
+    <script src="../js/gallery.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

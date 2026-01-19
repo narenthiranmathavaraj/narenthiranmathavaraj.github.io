@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narenthiran Mathavaraj | Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0e27%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2255%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300d9ff%22>^_-</text></svg>">
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-mesh">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="#home" style="text-decoration: none; color: inherit;">^_-</a>
+                <div class="logo-fact-bubble" id="logo-fact-bubble">
+                    <span id="logo-fact-text"></span><span class="logo-cursor">|</span>
+                </div>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#beyond-lab">Interests</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO - SIDE ALIGNED -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-visual reveal">
+                <div class="hero-profile-photo">
+                    <!-- 👤 -->
+                    <img src="assets/images/hero/robot_and_me.jpg" alt="Narenthiran M">
+                </div>
+                <div class="hero-social-links">
+                    <a href="https://github.com/narenthiranmathavaraj" target="_blank" title="GitHub"
+                        class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/narenthiran-m" target="_blank" title="LinkedIn"
+                        class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:naren1729003@gmail.com" title="Email" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-text reveal">
+                <h1>Narenthiran Mathavaraj</h1>
+                <!-- Typing Effect Container -->
+                <p class="subtitle"><span id="typing-text"></span><span class="cursor">|</span></p>
+                <p class="tagline">Aspiring researcher passionate about reinforcement learning in autonomous systems,
+                    surgical and intelligent/social robotics. Building the future of human-robot collaboration.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="assets/pdfs/cv.pdf" target="_blank" class="btn btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Dedicated robotics engineer seeking advanced research opportunities</p>
+        <div class="about-content reveal">
+            <div class="about-text">
+                <p>I am a <strong>Robotics Engineer</strong> with a strong foundation in autonomous systems, embedded
+                    programming, and robotic reinforcement learning. My academic journey has been driven by curiosity
+                    and a passion for solving real-world problems through intelligent machines.</p>
+                <p>Through hands-on projects, research internships, and collaborative work, I have developed expertise
+                    in <strong>ROS/ROS2, computer vision, RL, DL, SLAM, CAD and embedded systems design</strong>. My
+                    work has been recognized in multiple competitions and has resulted in one published <strong>
+                        conference paper</strong> and <strong>provisional patent</strong>.</p>
+                <p>I am now deepening my research in <strong>autonomous
+                        navigation, and RL for Robot Learning</strong>, with the goal of
+                    contributing to
+                    cutting-edge robotics research.</p>
+            </div>
+            <div class="about-details">
+                <h3>🎓 Academic Background</h3>
+                <ul>
+                    <li>B.Tech in Electronics and Communication Engineering</li>
+                    <li>National Institute of Technology - Tiruchirappalli [NITT]</li>
+                    <li>GPA: 3.7/4.0 (8.53 /10)</li>
+                </ul>
+                <h3 style="margin-top: 2rem;">🔬 Research Interests</h3>
+                <ul>
+                    <li>Autonomous Navigation & SLAM</li>
+                    <li>Multi-Agent Robotics Systems</li>
+                    <li>Robotic Reinforcement Learning</li>
+                    <li>Surgical Robotics</li>
+                    <li>Human-Robot Interaction</li>
+                </ul>
+                <h3 style="margin-top: 2rem;">📊 Test Scores</h3>
+                <ul>
+                    <li>TOEFL: 102 (R:27, L:27, S:25, W:23)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+        <h2 class="section-title">Research & Journey</h2>
+        <p class="section-subtitle">Academic research, publications, and milestones</p>
+        <div class="timeline">
+            <!-- Items... -->
+
+            <!-- === ➕ PASTE NEW EXPERIENCE/RESEARCH HERE (See templates/new_timeline_item.html) === -->
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-text">
+                        <h3>Robotic Software Intern - Versor [Artpark]</h3>
+                        <p class="date">Sep 2025 - Present | Indian Institute of Science [IISc]</p>
+                        <p>Developing an algorithm for an UGV to do state of art autonomous navigation in agricultural
+                            fields using <strong>custom Nav2 behavior tree</strong> and <strong>Proximal Policy
+                                Learning</strong>.</p>
+                    </div>
+                    <div class="timeline-photo">
+                        🤖
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-text">
+                        <h3>Summer Research Intern - Embedded Control Lab</h3>
+                        <p class="date">July 2024 - August 2024 | Indian Institute of Technology - Bombay [IITB]</p>
+                        <p>Worked on developing a mobile application to deploy and run a <strong>segmentation model
+                                (TFLite
+                                model)</strong> on Commercial-Off-The-Shelf devices (like smartphones) based robot that
+                            aims to do
+                            <strong>path planning</strong> using a <strong>drivable area segmentation</strong>.
+                        </p>
+                    </div>
+                    <div class="timeline-photo">
+                        🔬
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-text">
+                        <h3>Summer Research Intern - INSPIRE Lab</h3>
+                        <p class="date">June 2024 - Aug 2024 | Indian Institute of Technology - Madras [IITM]</p>
+                        <p>Designed and fabricated controls for a <strong> Low-Cost Master Tool Manipulator
+                                [MTM]</strong> in <strong>Fusion 360</strong>.</p>
+                    </div>
+                    <div class="timeline-photo">
+                        🔬
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-text">
+                        <h3>Provisional Patent Filed</h3>
+                        <p class="date">June 2024 | Indian Institute of Technology - Madras [IITM]</p>
+                        <p><strong>Provisional patent</strong> filed for Low-Cost Master Tool Manipulator [MTM].</p>
+                        <p>[Patent Application Number: 202441043076]</p>
+                    </div>
+                    <div class="timeline-photo">
+                        📃
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-text">
+                        <h3>Published Research Paper</h3>
+                        <p class="date">May 2024 | IEEE ICMRA 2024</p>
+                        <p>Published research paper titled <strong>"Spider Arm: Design and fabrication of a
+                                cost-effective six-axis robotic arm featuring a novel double-ring load transfer
+                                mechanism"</strong> at the International Conference
+                            on Mechatronics and Robotics Applications.</p>
+                        <a href="https://ieeexplore.ieee.org/document/10809088/" target="_blank"
+                            class="view-details btn-link" style="margin-top: 0.5rem;"><span>Learn More on IEEE
+                                Xplore</span></a>
+                    </div>
+                    <div class="timeline-photo">
+                        📑
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Click on any project to view detailed information</p>
+        <div class="projects-grid">
+
+            <!-- === ➕ PASTE NEW PROJECT HERE (See templates/new_project_card.html) === -->
+
+            <div class="project-card reveal" onclick="window.location.href='projects/autonomous-robot.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/autonomous-robot.gif" alt="Autonomous Agricultural Robot" class="project-gif"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🌱'">
+                </div>
+                <div class="project-info">
+                    <h3>Autonomous Agricultural Robot</h3>
+                    <p>Mobile robot with <strong>LiDAR-based navigation</strong> and <strong>real-time mapping</strong>
+                        capabilities.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ROS2</span>
+                        <span class="tech-tag">Nav2</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">RL</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+            <div class="project-card reveal" onclick="window.location.href='projects/lcm_iitm.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/lcm_iitm.gif" alt="Low-Cost Master (LCM) Device"
+                        class="project-gif img-contain"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🌱'">
+                </div>
+                <div class="project-info">
+                    <h3>Low-Cost Master (LCM) Device for Surgeon Training in Minimally Invasive Surgery</h3>
+                    <p>Master device for controlling a slave robot, enabling
+                        <strong>end-effector manipulation</strong> with <strong>remote center-of-motion (RCM)
+                            constraints</strong> for minimally invasive
+                        surgery.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ROS1</span>
+                        <span class="tech-tag">Embedded C</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Fusion 360</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal" onclick="window.location.href='projects/dqn-rl.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/dqn-rl.gif" alt="DQN Reinforcement Learning" class="project-gif"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🧠'">
+                </div>
+                <div class="project-info">
+                    <h3>Deep Q-Learning Network [DQN] Reinforcement Learning</h3>
+                    <p>RL agent for <strong>stable pole balancing</strong> in CartPole-v0 environment.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Gymnasium</span>
+                        <span class="tech-tag">RL</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal" onclick="window.location.href='projects/spider-arm.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/spider-arm.gif" alt="SpiderArm" class="project-gif"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🦾'">
+                </div>
+                <div class="project-info">
+                    <h3>SpiderArm [6-DOF Serial Robotic Manipulator]</h3>
+                    <p>Cost-effective <strong>6-DOF serial robotic manipulator</strong>.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Teensy</span>
+                        <span class="tech-tag">Embedded C</span>
+                        <span class="tech-tag">MoveIt</span>
+                        <span class="tech-tag">Fusion 360</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+            <div class="project-card reveal" onclick="window.location.href='projects/turtlesim.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/turtlesim.gif" alt="Turtlesim Catch Them All" class="project-gif"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🐢'">
+                </div>
+                <div class="project-info">
+                    <h3>Turtlesim Catch Them All</h3>
+                    <p><strong>ROS2-based robotic software stack</strong> development and validation.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ROS2</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">CLI Tools</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal" onclick="window.location.href='projects/holabot.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/holabot.gif" alt="Hola Bot" class="project-gif"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🏎️'">
+                </div>
+                <div class="project-info">
+                    <h3>Hola Bot</h3>
+                    <p>3-wheel <strong>holonomic mobile robot</strong> that draws art in the canvas.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ROS1</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Fusion 360</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+            <div class="project-card reveal" onclick="window.location.href='projects/cots_iitb.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/cots_iitb.gif" alt="COTS Device Segmentation" class="project-gif"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🌱'">
+                </div>
+                <div class="project-info">
+                    <h3>Drivable Area Segmentation Model on Commercial-Off-The-Shelf [COTS] Device</h3>
+                    <p>Developed an Android application to run <strong>segmentation</strong> for <strong>drivable area
+                            detection</strong> on COTS devices
+                        such as smartphones.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Android Studio</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Gazebo</span>
+                        <span class="tech-tag">TF Lite</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+            <div class="project-card reveal" onclick="window.location.href='projects/myfirst_robot.html'">
+                <div class="project-image">
+                    <img src="assets/gifs/myfirst_robot.gif" alt="Line Following Robot" class="project-gif"
+                        onerror="this.style.display='none'; this.parentElement.innerText='🏎️'">
+                </div>
+                <div class="project-info">
+                    <h3>Line Following robot [my first robotic project]</h3>
+                    <p>Simple <strong>Line Follower Robot</strong> that can follow Black Line.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Arduino</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+        <h2 class="section-title">Achievements</h2>
+        <div class="achievements-grid">
+
+            <!-- === ➕ PASTE NEW ACHIEVEMENT HERE (See templates/new_achievement_card.html) === -->
+
+            <div class="achievement-card reveal">
+                <div class="icon">🎤</div>
+                <h3>Excellent Presenter Award</h3>
+                <p>ICMRA 2024, Wuhan, China.</p>
+                <a href="https://www.icmra.org/2024.html" target="_blank" class="achievement-link btn-link"><span>View
+                        Website</span></a>
+            </div>
+            <div class="achievement-card reveal">
+                <div class="icon">🥇</div>
+                <h3>Robotics Hackathon Winners</h3>
+                <p>1st Place - STOCK PILOT [NITT Feb 2025]</p>
+                <a class="achievement-link btn-link" data-cert-src="assets/images/certificates/hackathon_winner.png"
+                    data-cert-title="Robotics Hackathon Winners"
+                    data-cert-desc="1st Place - STOCK PILOT (NITT Feb 2025)."
+                    onclick="openAchievementCert(this)"><span>View Certificate</span></a>
+            </div>
+            <div class="achievement-card reveal">
+                <div class="icon">🚀</div>
+                <h3>Seed Funding Grant</h3>
+                <p>Rs:50,000 for 6 DOF Robotic Arm development.</p>
+                <a class="achievement-link btn-link" data-cert-src="assets/images/certificates/seed_funding.png"
+                    data-cert-title="Seed Funding Grant" data-cert-desc="Rs:50,000 for 6 DOF Robotic Arm development."
+                    onclick="openAchievementCert(this)"><span>View Certificate</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates">
+        <h2 class="section-title">Certificates</h2>
+        <p class="section-subtitle">Professional certifications and completed courses</p>
+        <div class="certificates-grid">
+            <div class="certificate-card reveal">
+                <div class="certificate-image">
+                    <img src="assets/images/certificates/certificate.png" alt="Certificate">
+                    <span class="certificate-badge">Verified</span>
+                </div>
+                <div class="certificate-info">
+                    <h3>Deep Learning</h3>
+                    <p class="certificate-issuer">Issued by: Coursera (DeepLearning.AI)</p>
+                    <p>Course on Convolutional Neural Networks, Sequence Models, Improving Deep Neural Networks:
+                        Hyperparameter Tuning, Regularization and Optimization, Structuring Machine Learning Projects
+                    </p>
+                    <div class="certificate-footer">
+                        <span class="certificate-date">Jan 2026</span>
+                        <a href="https://coursera.org/verify/specialization/F6GQGRIWCYKH" target="_blank"
+                            class="verify-link btn-link"><span>Verify</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="certificate-card reveal">
+                <div class="certificate-image">
+                    <img src="assets/images/certificates/certificate.png" alt="Certificate">
+                    <span class="certificate-badge">Verified</span>
+                </div>
+                <div class="certificate-info">
+                    <h3>Modern Reinforcement Learning: Actor-Critic Agents</h3>
+                    <p class="certificate-issuer">Issued by: Udemy</p>
+                    <p>Comprehensive course covering Actor-Critic, DDPG, TD3, in PyTorch and Tensorflow.</p>
+                    <div class="certificate-footer">
+                        <span class="certificate-date">Dec 2025</span>
+                        <a href="https://www.udemy.com/certificate/UC-693c8a5a-0d12-4f9c-958e-49894c06ddc8/"
+                            target="_blank" class="verify-link btn-link"><span>Verify</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="certificate-card reveal">
+                <div class="certificate-image">
+                    <img src="assets/images/certificates/certificate.png" alt="Certificate">
+                    <span class="certificate-badge">Verified</span>
+                </div>
+                <div class="certificate-info">
+                    <h3>ROS2 Nav2 with SLAM and Navigation</h3>
+                    <p class="certificate-issuer">Issued by: Udemy</p>
+                    <p>Course on Navigation2 stack architecture and implementation.</p>
+                    <div class="certificate-footer">
+                        <span class="certificate-date">Nov 2025</span>
+                        <a href="https://www.udemy.com/certificate/UC-7fd47ac9-aab2-42a4-9b88-82db4decf081/"
+                            target="_blank" class="verify-link btn-link"><span>Verify</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="certificate-card reveal">
+                <div class="certificate-image">
+                    <img src="assets/images/certificates/certificate.png" alt="Certificate">
+                    <span class="certificate-badge">Verified</span>
+                </div>
+                <div class="certificate-info">
+                    <h3>ROS2 Moveit2 - Control a Robotic Arm</h3>
+                    <p class="certificate-issuer">Issued by: Udemy</p>
+                    <p>Course on controlling manipulators using Moveit2 and ros2_control.</p>
+                    <div class="certificate-footer">
+                        <span class="certificate-date">Oct 2025</span>
+                        <a href="https://www.udemy.com/certificate/UC-d3a198be-4b8b-4d52-ac43-205e5e89e03f/"
+                            target="_blank" class="verify-link btn-link"><span>Verify</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="certificate-card reveal">
+                <div class="certificate-image">
+                    <img src="assets/images/certificates/certificate.png" alt="Certificate">
+                    <span class="certificate-badge">Verified</span>
+                </div>
+                <div class="certificate-info">
+                    <h3>Machine Learning Specialization</h3>
+                    <p class="certificate-issuer">Issued by: Coursera (DeepLearning.AI)</p>
+                    <p>Course on Supervised, Unsupervised, Recommenders and Reinforcement Learning.</p>
+                    <div class="certificate-footer">
+                        <span class="certificate-date">Sep 2025</span>
+                        <a href="https://coursera.org/verify/specialization/TIGL7VYZEKJB" target="_blank"
+                            class="verify-link btn-link"><span>Verify</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category reveal">
+                <h3>⚡ Programming</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">Embedded C</span>
+                    <span class="skill-item">MATLAB</span>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <h3>⚡ Robotics</h3>
+                <div class="skills-list">
+                    <span class="skill-item">ROS1/ROS2</span>
+                    <span class="skill-item">Nav2</span>
+                    <span class="skill-item">Gazebo</span>
+                    <span class="skill-item">MoveIt</span>
+                    <span class="skill-item">RViz</span>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <h3>⚡ AI & Vision</h3>
+                <div class="skills-list">
+                    <span class="skill-item">OpenCV</span>
+                    <span class="skill-item">TensorFlow</span>
+                    <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">YOLO</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">A collection of moments from my research and projects</p>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\young_kalam_jury.jpeg" alt="ICMRA Group Photo"
+                    data-desc="Invited as a Jury Member for the Young Kalam Science Festival to assess, evaluate, and rate innovative science projects developed by school children.">
+                <div class="gallery-overlay">
+                    <h4>Young Kalam Science Festival</h4>
+                    <p>Invited as a Jury Member for the Young Kalam Science Festival to assess, evaluate, and rate
+                        innovative science projects developed by school children.</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\pragyan_spider_arm_presentation.jpg"
+                    alt="Pragyan Spider Arm Presentation" data-desc="Explaining our SpiderArm Project to School Kids">
+                <div class="gallery-overlay">
+                    <h4>Pragyan Spider Arm Presentation</h4>
+                    <p>Explaining our SpiderArm Project to School Kids</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\spider_batch_23_24.jpg"
+                    alt="Spider [Official Research Club of NITT] Batch 23-24" data-desc="Members of Spider">
+                <div class="gallery-overlay">
+                    <h4>Spider [Official Research Club of NITT] Batch 23-24</h4>
+                    <p>Members of Spider</p>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\iitm_lcm_testing.png" alt="IIT Madras Research Internship"
+                    data-desc="Testing the Dexterity and Accuracy of the Low-Cost Master Tool Manipulator">
+                <div class="gallery-overlay">
+                    <h4>IIT Madras Research Internship</h4>
+                    <p>Testing the Dexterity and Accuracy of the Low-Cost Master Tool Manipulator</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\icmra_grp_pic.png" alt="ICMRA Group Photo" data-desc="Members of ICMRA">
+                <div class="gallery-overlay">
+                    <h4>ICMRA Group Photo</h4>
+                    <p>ICMRA Conference 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\aragog_workshop.jpg" alt="Aragog [Hexapod] robot builing workshop"
+                    data-desc="Conducted a hands-on workshop for 200+ students on hexapod robot building and programming.">
+                <div class="gallery-overlay">
+                    <h4>Aragog [Hexapod] robot builing workshop</h4>
+                    <p>Conducted a hands-on workshop for 200+ students on hexapod robot building and programming.</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\hola_bot_cam_testing.png" alt="Hola Bot Fish-Eye Camera Testing"
+                    data-desc="Just finished taping the fish-eye camera to the ceiling—hoping it doesn’t fall.">
+                <div class="gallery-overlay">
+                    <h4>Hola Bot Fish-Eye Camera Testing</h4>
+                    <p>Just finished taping the fish-eye camera to the ceiling—hoping it doesn’t fall.</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)">
+                <img src="assets\images\gallery\csr_event.jpg" alt="CSR Event for Pragyan"
+                    data-desc="Conducted a sustainable development program with a quiz competition and cash prize distribution for underprivileged children.">
+                <div class="gallery-overlay">
+                    <h4>CSR Event for Pragyan</h4>
+                    <p>Conducted a sustainable development program with a quiz competition and cash prize distribution
+                        for underprivileged children.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)"><i class="fas fa-times"></i></span>
+        <div class="lightbox-content">
+            <div id="lightbox-img-container" style="display: none;">
+                <img id="lightbox-img" src="" alt="Gallery Image" class="lightbox-img">
+            </div>
+            <div id="lightbox-emoji-container" style="display: none;">
+                <div
+                    style="width: 100%; min-height: 300px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; font-size: 10rem; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); border: 1px solid rgba(0, 217, 255, 0.2);">
+                    <span id="lightbox-emoji"></span>
+                </div>
+            </div>
+            <div class="lightbox-caption">
+                <h4 id="lightbox-title"></h4>
+                <p id="lightbox-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BEYOND THE LAB SECTION -->
+    <section id="beyond-lab" class="beyond-section">
+        <div class="container">
+            <h2 class="section-title reveal">Beyond the Lab</h2>
+            <p class="reveal"
+                style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-secondary); line-height: 1.6; font-size: 1.1rem;">
+                <!-- Leadership, problem-solving, and staying balanced. <br> -->
+                Beyond my technical work, I'm passionate about sharing knowledge and building community. I've conducted
+                multiple robotics workshops for undergraduate and school students.
+            </p>
+
+            <div class="beyond-grid reveal">
+                <!-- Leadership Card -->
+                <div class="beyond-card">
+                    <h3><i class="fas fa-users-cog"></i> Leadership & Community</h3>
+                    <ul class="beyond-list">
+                        <li><i class="fas fa-chalkboard-teacher"></i> <span>Robotics workshop instructor (200+
+                                students)</span></li>
+                        <li><i class="fas fa-bullhorn"></i> <span>University's Cultural Festival (Festember) Marketing
+                                Team Manager</span></li>
+                        <li><i class="fas fa-lightbulb"></i> <span>Research club Member/Mentor</span></li>
+                    </ul>
+                </div>
+
+                <!-- Hobbies Card -->
+                <div class="beyond-card">
+                    <h3><i class="fas fa-puzzle-piece"></i> Hobbies</h3>
+                    <ul class="beyond-list">
+                        <li><i class="fas fa-chess"></i> <span> Chess (<a
+                                    href="https://www.chess.com/member/dude_who_plays_chess" target="_blank"
+                                    class="chess-link">if free give a challenge in chess.com Let's play</a>)</span></li>
+                        <li><i class="fas fa-cube"></i> <span>Speedcubing (3x3 in &lt;15 sec)</span></li>
+                        <li><i class="fas fa-running"></i> <span>Handball player</span></li>
+                        <li><i class="fas fa-feather-alt"></i> <span>Badminton enthusiast</span></li>
+                        <li><i class="fas fa-dumbbell"></i> <span>Calisthenics training</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="reveal"
+                style="text-align: center; margin-top: 3rem; color: var(--text-secondary); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Also, I actively play handball and badminton, and recently started calisthenics training. These
+                activities keep me physically active and mentally sharp.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section id="contact">
+        <div class="contact-container">
+            <!-- Left Info -->
+            <div class="contact-text-content reveal">
+                <h2>Get In Touch...</h2>
+                <p class="subtitle">Open to collaborations and research opportunities.</p>
+                <p>Developing the future of robotics requires collaboration. Whether you have a question about my
+                    research,
+                    want to discuss a project, or just want to say hi, my inbox is always open.</p>
+
+                <div class="contact-info">
+                    <a href="mailto:naren1729003@gmail.com" class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <span>naren1729003@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/narenthiranmathavaraj" target="_blank" class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <span>github.com/narenthiranmathavaraj</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/narenthiran-m" target="_blank" class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <span>linkedin.com/in/narenthiran-m</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Form -->
+            <div class="contact-form reveal">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name / Organization</label>
+                        <input type="text" id="name" name="name" class="form-input" required placeholder="PixelDude">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" required
+                            placeholder="pixeldude@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" required
+                            placeholder="Hello, I'd like to discuss..."></textarea>
+                    </div>
+                    <button type="submit" class="form-btn">
+                        <span id="btn-text">Send Message</span>
+                    </button>
+                    <p id="form-status" style="margin-top: 1rem; text-align: center; font-size: 0.9rem;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MASCOT -->
+    <div class="mascot-container">
+        <div class="mascot-tooltip" id="mascot-tooltip">
+            <div style="text-align: center; color: #222;">
+                <div
+                    style="font-size: 0.9em; font-weight: normal; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    Cursor ring expands on clickable Items!
+                    <span
+                        style="width: 10px; height: 10px; border: 2px solid #00d9ff; border-radius: 50%; display: inline-block;"></span>
+                    <span>→</span>
+                    <span
+                        style="width: 16px; height: 16px; border: 2px solid #00d9ff; border-radius: 50%; display: inline-block; background: rgba(0, 217, 255, 0.2); box-shadow: 0 0 5px rgba(0, 217, 255, 0.5);"></span>
+                </div>
+                <div style="font-weight: bold;">Have a sweet day ❤️...</div>
+            </div>
+        </div>
+        <img src="assets/images/mascot/walle.png" alt="Wall-E Mascot" class="mascot-img">
+    </div>
+    </div>
+
+    <!-- Fun Footer -->
+    <footer class="fun-footer">
+        <p>Feel free to build your homepage upon my <a
+                href="https://github.com/narenthiranmathavaraj/narenthiranmathavaraj.github.io" target="_blank"
+                style="color: inherit; text-decoration: underline;">template</a> :)</p>
+        <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Copyright © 2026 Narenthiran Mathavaraj</p>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

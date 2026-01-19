@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivable Area Segmentation Model on COTS Device | Portfolio</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0e27%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2255%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300d9ff%22>^_-</text></svg>">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project Detail Specific Styles */
+        .project-detail-container {
+            padding: 120px 20px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-header-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-mesh">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">^_-</a>
+                <div class="logo-fact-bubble" id="logo-fact-bubble">
+                    <span id="logo-fact-text"></span><span class="logo-cursor">|</span>
+                </div>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail-container">
+        <a href="../index.html#projects" class="back-link btn-link back"><span>Back to Projects</span></a>
+
+        <header class="project-hero">
+            <h1>Drivable Area Segmentation Model on COTS Device</h1>
+            <div class="tech-stack-icons">
+                <span class="tech-icon" title="OpenCV">OpenCV</span>
+                <span class="tech-icon" title="Android Studio">Android Studio</span>
+                <span class="tech-icon" title="Python">Python</span>
+                <span class="tech-icon" title="Gazebo">Gazebo</span>
+                <span class="tech-icon" title="TF Lite">TF Lite</span>
+            </div>
+        </header>
+
+        <!-- 1. HERO MEDIA (Video Loop Placeholder) -->
+        <div class="project-media-hero" onclick="playInlineVideo(this)"
+            data-video-src="https://www.youtube.com/embed/AutSgxzbXnw">
+            <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <p>COTS Mobile Application - Real-time Inference Demo</p>
+            </div>
+        </div>
+
+        <!-- 2. MAIN BENTO GRID -->
+        <div class="project-content-grid">
+
+            <!-- Card 1: Main Overview (Wide) -->
+            <div class="bento-card col-span-2">
+                <h3>📝 Executive Summary</h3>
+                <p class="bento-text">
+                    This project focuses on developing an <strong>Android-based mobile application</strong> that
+                    performs <strong>real-time
+                        segmentation</strong> and <strong>monocular depth estimation</strong> to identify drivable areas
+                    and execute path-planning
+                    algorithms directly on <strong>commercial off-the-shelf (COTS) devices</strong> such as smartphones.
+                    By leveraging
+                    the onboard sensors and computational capabilities of Android devices, the system enables
+                    <strong>fully
+                        local perception and planning</strong> without external compute units.
+                    <br><br>
+                    The ultimate goal is to establish an
+                    Android smartphone as a <strong>standalone sensor and processing unit</strong> for mobile robotic
+                    platforms, reducing
+                    system cost, complexity, and power consumption.
+                </p>
+            </div>
+
+            <!-- Card 2: Key Stat (Tall) -->
+            <div class="bento-card stat-card">
+                <div>
+                    <span class="stat-number">
+                        &lt;2s </span>
+                    <span class="stat-label">Latency</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Key Features (Tall) -->
+            <div class="bento-card">
+                <h3>🎯 Key Features</h3>
+                <ul class="bento-features">
+                    <li><strong>Monocular Depth Estimation</strong>: Implemented using <strong>Gazebo
+                            simulation</strong>, <strong>OpenCV</strong>, and
+                        the TurtleBot image plugin. </li>
+                    <li><strong>On-device Segmentation</strong>: Integrated a <strong>TFLite-based drivable area
+                            segmentation
+                            model</strong> into the mobile application.</li>
+                    <li><strong>Simulation-to-Deployment Pipeline</strong>: Validated perception algorithms in
+                        <strong>Gazebo</strong>
+                        before mobile deployment.
+                    </li>
+                    <li><strong>Edge Processing</strong>: Enabled <strong>real-time perception</strong> and
+                        decision-making directly on
+                        COTS devices.</li>
+                </ul>
+            </div>
+            <!-- Card 4: Architecture Diagram (Wide) -->
+            <div class="bento-card col-span-2 clickable-media" onclick="openMediaLightbox(this)" data-title="DQN Output"
+                data-desc="Polar Occupancy and Cartesian Grid are plotted for the given Free Space Area via Yolo_P.">
+                <h3>⚙️ Drivable Area Segmentation</h3>
+                <div class="media-placeholder">
+                    <img src="../assets/images/projects/cots_iitb/cots_ittb_segmentation_plots.png.png"
+                        alt="Drivable Area Segmentation" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <div class="media-caption">Polar Occupancy and Cartesian Grid are plotted for the given Free Space Area
+                    via Yolo_P.</div>
+            </div>
+
+            <!-- Card 5: Media -->
+            <div class="bento-card col-span-2 clickable-media" onclick="openMediaLightbox(this)" data-title="DQN Output"
+                data-desc="Gazebo distance vs Calculated distance">
+                <h3>📊Inference Graph</h3>
+                <div class="media-placeholder">
+                    <img src="../assets/images/projects/cots_iitb/cots_ittb_inference_graph.png"
+                        alt="Gazebo distance vs Calculated distance"
+                        style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <div class="media-caption">Gazebo distance vs Calculated distance</div>
+            </div>
+
+            <!-- Card 6: Challenges -->
+            <div class="bento-card">
+                <h3>🚩 Results</h3>
+                <p class="bento-text">
+                    Predicted vs. actual TurtleBot distances show a <strong>correlation coefficient of 1.0</strong>.
+                    <br><br>
+                    Free space visualized using <strong>polar occupancy and Cartesian grids</strong> via
+                    <strong>YOLO_P</strong>.
+                    <br><br>
+                    <strong>FFNet-40S (quantized)</strong> inference time: <strong>1000–1500 ms</strong>.
+                </p>
+            </div>
+
+            <!-- Card 7: Git Link -->
+            <!-- Removed 'stat-card' class so this button DOES NOT glow -->
+            <!-- <div class="bento-card"
+                style="background: rgba(0,217,255,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center;"
+                onclick="window.open('https://github.com/narenthiranmathavaraj/COTS-IITB', '_blank')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-github" style="font-size: 2rem; color: var(--primary);"></i>
+                    <span class="stat-label" style="display: block; font-size: 1.2rem; margin: 0;">View Code</span>
+                </div>
+            </div> -->
+
+
+        </div>
+
+        <div class="project-actions">
+            <a href="holabot.html" class="btn btn-secondary back">Previous Project</a>
+            <a href="myfirst_robot.html" class="btn btn-primary">Next Project</a>
+        </div>
+
+
+
+    </main>
+
+    <!-- Fun Footer -->
+    <footer class="fun-footer">
+        <p>Feel free to build your homepage upon my <a href="https://github.com/narenthiranmathavaraj/narenthiranmathavaraj.github.io" target="_blank"
+                style="color: inherit; text-decoration: underline;">template</a> :)</p>
+        <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Copyright © 2026 Narenthiran Mathavaraj</p>
+    </footer>
+
+    <script src="../js/gallery.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
