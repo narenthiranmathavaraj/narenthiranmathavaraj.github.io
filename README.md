@@ -1,3 +1,5 @@
+[**✨ View Live Preview**](https://narenthiranmathavaraj.github.io/)
+
 # Narenthiran's Portfolio Template ^_-
 
 **Welcome to your new portfolio!** 🚀
