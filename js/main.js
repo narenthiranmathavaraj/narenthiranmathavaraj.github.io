@@ -378,5 +378,32 @@ document.addEventListener('DOMContentLoaded', () => {
             logoArea.classList.remove('typing');
             clearTimeout(factTimeout);
         });
+        logoArea.addEventListener('mouseleave', () => {
+            isTypingFact = false;
+            logoArea.classList.remove('typing');
+            clearTimeout(factTimeout);
+        });
     }
+
+    // 4. MASCOT AUTO-SHOW
+    setTimeout(() => {
+        const tooltip = document.getElementById('mascot-tooltip');
+        if (tooltip) tooltip.classList.add('show');
+    }, 1500); // Show after 1.5s
 });
+
+// GLOBAL FUNCTIONS FOR MASCOT INTERACTION (Needs to be outside DOMContentLoaded to be accessible by onclick in HTML)
+window.toggleMascot = function (event) {
+    const tooltip = document.getElementById('mascot-tooltip');
+    if (!tooltip) return;
+
+    // If clicking the image/container, toggle.
+    // NOTE: The close button has stopPropagation, so it won't trigger this if clicked.
+    tooltip.classList.toggle('show');
+};
+
+window.closeMascot = function (event) {
+    const tooltip = document.getElementById('mascot-tooltip');
+    if (tooltip) tooltip.classList.remove('show');
+    if (event) event.stopPropagation(); // Stop it from bubbling up to toggleMascot
+};

@@ -2010,10 +2010,42 @@ section {
     /* Stop bouncing to "listen" */
 }
 
+/* Tooltip Visible Class (Controlled by JS) */
+.mascot-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    /* Enable clicking close button */
+}
+
+.mascot-close {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    font-size: 1.4rem;
+    /* Larger touch target */
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: bold;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 10;
+}
+
+.mascot-close:hover {
+    color: #ff4444;
+}
+
 .mascot-tooltip {
     background: rgba(255, 255, 255, 0.9);
     color: var(--bg-dark);
-    padding: 0.5rem 1rem;
+    padding: 1rem 2.2rem 1rem 1.2rem;
+    /* More right padding for close button */
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: 700;
@@ -2026,8 +2058,16 @@ section {
     bottom: 100%;
     /* Above the image */
     right: 0;
-    white-space: nowrap;
+    /* Smart Width Logic (Wide / Horizontal) */
+    white-space: normal;
+    /* Allow text wrapping */
+    min-width: 360px;
+    /* Force wider for 2-liner */
+    max-width: 90vw;
+    /* Prevent screen overflow on mobile */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    /* Better for multi-line text */
 }
 
 .mascot-tooltip::after {
@@ -2040,10 +2080,7 @@ section {
     border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
 }
 
-.mascot-container:hover .mascot-tooltip {
-    opacity: 1;
-    transform: translateY(0);
-}
+
 
 @keyframes mascotBounce {
 
