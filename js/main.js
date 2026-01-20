@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Safety: If hovering the lightbox background or content wrapper, FORCE reset
         // This overrides any underlying element (like gallery items) that might be "seen" by elementFromPoint
-        if (hoveredEl && (hoveredEl.classList.contains('lightbox') || hoveredEl.id === 'lightbox-content')) {
+        if (hoveredEl && (hoveredEl.classList.contains('lightbox') || hoveredEl.classList.contains('lightbox-content'))) {
             cursorRing.classList.remove('active');
             return;
         }
@@ -396,6 +396,11 @@ document.addEventListener('DOMContentLoaded', () => {
 window.toggleMascot = function (event) {
     const tooltip = document.getElementById('mascot-tooltip');
     if (!tooltip) return;
+
+    // If clicking INSIDE the tooltip content (e.g. selecting text), do nothing
+    if (event.target.closest('.mascot-tooltip') && !event.target.classList.contains('mascot-close')) {
+        return;
+    }
 
     // If clicking the image/container, toggle.
     // NOTE: The close button has stopPropagation, so it won't trigger this if clicked.
