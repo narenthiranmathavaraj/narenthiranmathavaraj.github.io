@@ -85,7 +85,7 @@
 
         <!-- 1. HERO MEDIA (Video Loop / Placeholder) -->
         <div class="project-media-hero" onclick="playInlineVideo(this)"
-            data-video-src="https://www.youtube.com/embed/ORO_VRz-6Fs">
+            data-video-src="https://www.youtube.com/embed/Sj1aFO0C5vw">
             <div class="video-placeholder">
                 <div class="play-icon">▶</div>
                 <p>Follow Me Feature Demonstration</p>
@@ -99,18 +99,22 @@
             <div class="bento-card col-span-2">
                 <h3>📝 Executive Summary</h3>
                 <p class="bento-text">
-                    This project focuses on <strong>autonomous navigation in unstructured agricultural
+                    This project focuses on <strong>autonomous navigation</strong> in <strong>unstructured agricultural
                         environments</strong>, where
-                    robots must distinguish between <strong>traversable vegetation</strong>, <strong>non-lethal
+                    robots must distinguish <strong>traversable vegetation</strong>, <strong>non-lethal
                         obstacles</strong> (e.g., tall grass and
-                    branches), and <strong>lethal obstacles</strong> (e.g., humans and trees), while dynamically
-                    adapting to <strong>varying
-                        terrain traversability</strong> such as grassy versus rocky regions.
+                    branches), and <strong>lethal obstacles</strong> (e.g., humans and trees), while adapting to
+                    <strong>varying terrain
+                        traversability</strong>. I am developing a <strong>Nav2-based ROS stack</strong> for a
+                    <strong>UGV</strong> that fuses <strong>LiDAR and RGB-D data</strong> to
+                    generate <strong>adaptive semantic costmaps</strong> beyond traditional heightmaps for
+                    <strong>autonomous field navigation</strong>.
                     <br><br>
-                    I am developing a <strong>Nav2-based ROS stack for UGV</strong> that fuses <strong>LiDAR and RGB-D
-                        data</strong> to
-                    create <strong>adaptive costmaps</strong> unlike heightmaps to navigate through agricultural fields
-                    autonomously.
+                    Right Now, I developed a <strong>follow-me feature</strong> capable of <strong>robust person
+                        tracking</strong> under
+                    multiple people and partial occlusions, along with a <strong>control algorithm</strong> to
+                    <strong>reduce slip and stall</strong>
+                    during turning, improving reliability on <strong>low-traction terrain</strong>.
                 </p>
             </div>
 
@@ -147,26 +151,46 @@
                 <div class="media-caption">Follow-Me Mode System Architecture</div>
 
             </div>
-
-            <!-- Card 5: Media -->
-            <div class="bento-card clickable-media" onclick="openMediaLightbox(this)" data-title="Diadem Robot"
-                data-desc="Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted on it.">
-                <h3>🏞️ Diadem Robot</h3>
-                <div class="media-placeholder">
-                    <!-- Placeholder for Costmap GIF -->
-                    <!-- Diadem's Picture with sensors mounted on it. -->
-                    <img src="../assets/images/projects/autonomous-robot/diadem_with_sensors.png"
-                        alt="Diadem with sensors mounted on it." style="width: 100%; height: auto; border-radius: 8px;">
+            <!-- Card 5: Media Showcase (Video) -->
+            <div class="bento-card col-span-2 media-card-bento" onclick="playInlineVideo(this)"
+                data-video-src="https://www.youtube.com/embed/GqqPnJxLiNE">
+                <div class="video-placeholder media-placeholder"
+                    style="background: linear-gradient(45deg, #2a2f4a, #1a1f3a);">
+                    <div class="play-icon">▶</div>
+                    <!-- Placeholder Text -->
+                    <p>
+                        Follow Me Feature Per Person Segmentation for Pose Estimation</p>
                 </div>
-                <div class="media-caption">Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted
-                    on it.
-                </div>
+                <div class="media-caption-overlay">
+                    Follow Me Feature Per Person Segmentation for Pose Estimation</div>
             </div>
+
+            <!-- Card 6: Media Showcase (Image) -->
+            <div class="bento-card col-span-2 clickable-media" onclick="openMediaLightbox(this)"
+                data-title="Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted on it">
+                <h3>🏞️ Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted on it</h3>
+                <div class="flowchart-bento">
+                    <!-- [System Architecture Diagram: Sensors -> Fusion -> Planner -> Control] -->
+                    <img src="../assets/images/projects/autonomous-robot/diadem_with_sensors.png"
+                        alt="System Architecture Diagram" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <!-- <div class="media-caption">Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted
+                    on it.</div> -->
+
+            </div>
+
 
             <!-- Card 6: Challenges -->
             <div class="bento-card">
                 <h3>🚩 Challenges</h3>
                 <p class="bento-text">
+                    Implementing a <strong>real-time, human-tracking and segmentation algorithm</strong> that ensures
+                    accurate,
+                    <strong>identity-consistent tracking</strong> of a <strong>designated person</strong> without
+                    <strong>mis-segmenting other individuals</strong> even
+                    under <strong>partial occlusions</strong>, enabling <strong>fast and safe decision-making</strong>
+                    within the <strong>Nav2 navigation
+                        framework</strong>.
                     Researching optimal approaches to implement <strong>adaptive costmaps</strong> for agricultural
                     fields using
                     <strong>reinforcement learning</strong>, with a focus on <strong>safe operation</strong> in
@@ -198,7 +222,8 @@
 
     <!-- Fun Footer -->
     <footer class="fun-footer">
-        <p>Feel free to build your homepage upon my <a href="https://github.com/narenthiranmathavaraj/narenthiranmathavaraj.github.io" target="_blank"
+        <p>Feel free to build your homepage upon my <a
+                href="https://github.com/narenthiranmathavaraj/narenthiranmathavaraj.github.io" target="_blank"
                 style="color: inherit; text-decoration: underline;">template</a> :)</p>
         <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Copyright © 2026 Narenthiran Mathavaraj</p>
     </footer>
