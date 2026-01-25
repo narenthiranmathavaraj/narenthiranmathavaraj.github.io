@@ -123,9 +123,9 @@ assets/
 │   ├── certificates/   → Certificate images
 │   ├── mascot/         → Wall-E mascot image
 │   └── ui/             → UI elements (cursor, etc.)
-├── gifs/               → Animated GIFs
+├── gifs/               → Animated GIFs and MP4 Videos (Project Thumbnails)
 ├── pdfs/               → PDF documents (CV, etc.)
-└── videos/             → Video files
+├── videos/             → Larger Video files
 ```
 
 ### Changing Project Images (Bento Grid)
@@ -137,10 +137,10 @@ For the new "Bento Grid" layout on project pages:
         ```html
         <img src="../assets/images/projects/your-image.jpg" alt="Description" style="width:100%; height:100%; object-fit:cover;">
         ```
-    *   **To use a Video**:
+    *   **To use a Video (Recommended):**
         ```html
-        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
-            <source src="../assets/images/projects/your-video.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+            <source src="../assets/gifs/your-video.mp4" type="video/mp4">
         </video>
         ```
 
