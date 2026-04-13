@@ -85,10 +85,10 @@
 
         <!-- 1. HERO MEDIA (Video Loop / Placeholder) -->
         <div class="project-media-hero" onclick="playInlineVideo(this)"
-            data-video-src="https://www.youtube.com/embed/Sj1aFO0C5vw">
+            data-video-src="https://www.youtube.com/embed/0-8TGiyXU1U">
             <div class="video-placeholder">
                 <div class="play-icon">▶</div>
-                <p>Follow Me Feature Demonstration</p>
+                <p>Follow Me Feature (with trajectory prediction) Demonstration [Sonic]</p>
             </div>
         </div>
 
@@ -111,7 +111,7 @@
                     <strong>autonomous field navigation</strong>.
                     <br><br>
                     Right Now, I developed a <strong>follow-me feature</strong> capable of <strong>robust person
-                        tracking</strong> under
+                        tracking and trajectory prediction</strong> under
                     multiple people and partial occlusions, along with a <strong>control algorithm</strong> to
                     <strong>reduce slip and stall</strong>
                     during turning, improving reliability on <strong>low-traction terrain</strong>.
@@ -130,10 +130,13 @@
             <div class="bento-card row-span-2">
                 <h3>🎯 Key Features</h3>
                 <ul class="bento-features">
-                    <li><strong>Follow-Me Mode</strong>: Robust person tracking even with occlusions (using Yolo11 and
+                    <li><strong>Follow-Me Mode</strong>: Robust person tracking and trajectory prediction even with
+                        occlusions (using Yolo11 and
                         YoloE).</li>
                     <li><strong>Unmaned Ground Vehicle</strong>: RigBetel Labs' Diadem.</li>
-                    <li><strong>Sensor Fusion</strong>: Velodyne LiDAR + Realsense RGB-D Camera.</li>
+                    <li><strong>Sensor Fusion</strong>: Velodyne LiDAR + Realsense RGB-D Camera [Diadem], <br>Livox
+                        Mid-360 Lidar
+                        + Realsense RGB-D Camera [Sonic].</li>
                     <li><strong>RL Navigation</strong>: Custom PPO agent for terrain analysis.</li>
                     <li><strong>Mapless</strong>: Operates without prior 2d occupancy grid static map.</li>
                 </ul>
@@ -153,6 +156,23 @@
             </div>
             <!-- Card 5: Media Showcase (Video) -->
             <div class="bento-card col-span-2 media-card-bento" onclick="playInlineVideo(this)"
+                data-video-src="https://www.youtube.com/embed/Sj1aFO0C5vw">
+                <div class="video-placeholder media-placeholder"
+                    style="background: linear-gradient(45deg, #2a2f4a, #1a1f3a);">
+                    <div class="play-icon">▶</div>
+                    <!-- Placeholder Text -->
+                    <p>
+                        Follow Me Feature Demonstration [Diadem]</p>
+                </div>
+                <div class="media-caption-overlay">
+                    Follow Me Feature Demonstration [Diadem]</div>
+            </div>
+
+
+
+
+            <!-- Card 5: Media Showcase (Video) -->
+            <div class="bento-card col-span-2 media-card-bento" onclick="playInlineVideo(this)"
                 data-video-src="https://www.youtube.com/embed/GqqPnJxLiNE">
                 <div class="video-placeholder media-placeholder"
                     style="background: linear-gradient(45deg, #2a2f4a, #1a1f3a);">
@@ -165,26 +185,12 @@
                     Follow Me Feature Per Person Segmentation for Pose Estimation</div>
             </div>
 
-            <!-- Card 6: Media Showcase (Image) -->
-            <div class="bento-card col-span-2 clickable-media" onclick="openMediaLightbox(this)"
-                data-title="Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted on it">
-                <h3>🏞️ Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted on it</h3>
-                <div class="flowchart-bento">
-                    <!-- [System Architecture Diagram: Sensors -> Fusion -> Planner -> Control] -->
-                    <img src="../assets/images/projects/autonomous-robot/diadem_with_sensors.png"
-                        alt="System Architecture Diagram" style="width: 100%; height: auto; border-radius: 8px;">
-                </div>
-                <!-- <div class="media-caption">Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted
-                    on it.</div> -->
-
-            </div>
-
-
             <!-- Card 6: Challenges -->
             <div class="bento-card">
                 <h3>🚩 Challenges</h3>
                 <p class="bento-text">
-                    Implementing a <strong>real-time, human-tracking and segmentation algorithm</strong> that ensures
+                    Implementing a <strong>real-time, human-tracking, trajectory prediction and segmentation
+                        algorithm</strong> that ensures
                     accurate,
                     <strong>identity-consistent tracking</strong> of a <strong>designated person</strong> without
                     <strong>mis-segmenting other individuals</strong> even
@@ -198,6 +204,31 @@
                 </p>
             </div>
 
+            <!-- Card 6a: Media Showcase (Image 1) -->
+            <div class="bento-card clickable-media" onclick="openMediaLightbox(this)"
+                data-title="Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted on it">
+                <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">🏞️ Diadem with sensors [Velodyne-32 LiDAR +
+                    Realsense D457 RGB-D Camera]</h3>
+                <div class="flowchart-bento">
+                    <!-- Image 1 -->
+                    <img src="../assets/images/projects/autonomous-robot/diadem_with_sensors.png"
+                        alt="System Architecture Diagram 1" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+
+            <!-- Card 6: Media Showcase (Image) -->
+            <div class="bento-card col-span-2 clickable-media" onclick="openMediaLightbox(this)"
+                data-title="Sonic with sensors [Livox Mid-360 LiDAR + Realsense D457 RGB-D Camera] mounted on it">
+                <h3>🏞️ Sonic with sensors [Livox Mid-360 LiDAR + Realsense D457 RGB-D Camera] mounted on it</h3>
+                <div class="flowchart-bento">
+                    <!-- [System Architecture Diagram: Sensors -> Fusion -> Planner -> Control] -->
+                    <img src="../assets/images/projects/autonomous-robot/sonic.jpg" alt="System Architecture Diagram"
+                        style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <!-- <div class="media-caption">Diadem with sensors [Velodyne-32 LiDAR + Realsense D457 RGB-D Camera] mounted
+                    on it.</div> -->
+
+            </div>
             <!-- Card 7: Git Link -->
             <!-- Removed 'stat-card' class so this button DOES NOT glow -->
             <!-- <div class="bento-card"
