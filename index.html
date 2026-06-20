@@ -101,7 +101,7 @@
                 <p>Through hands-on projects, research internships, and collaborative work, I have developed expertise
                     in <strong>ROS/ROS2, computer vision, RL, DL, SLAM, CAD and embedded systems design</strong>. My
                     work has been recognized in multiple competitions and has resulted in one published <strong>
-                        conference paper</strong> and <strong>provisional patent</strong>.</p>
+                        conference paper</strong> and a granted <strong>patent</strong>.</p>
                 <p>I am now deepening my research in <strong>autonomous
                         navigation, and RL for Robot Learning</strong>, with the goal of
                     contributing to
@@ -116,11 +116,10 @@
                 </ul>
                 <h3 style="margin-top: 2rem;">🔬 Research Interests</h3>
                 <ul>
-                    <li>Autonomous Navigation & SLAM</li>
-                    <li>Multi-Agent Robotics Systems</li>
                     <li>Robotic Reinforcement Learning</li>
+                    <li>Autonomous Navigation & SLAM</li>
                     <li>Surgical Robotics</li>
-                    <li>Human-Robot Interaction</li>
+                    <li>Multi-Agent Robotics Systems</li>
                 </ul>
                 <h3 style="margin-top: 2rem;">📊 Test Scores</h3>
                 <ul>
@@ -145,15 +144,32 @@
                         <h3>Robotic Software Intern - Versor [Artpark]</h3>
                         <p class="date">Sep 2025 - Present | Indian Institute of Science [IISc]</p>
                         <p>Developing an algorithm for an UGV to do state of art autonomous navigation in agricultural
-                            fields using <strong>custom Nav2 behavior tree</strong> and <strong>Proximal Policy
-                                Learning</strong>.</p>
+                            fields using <strong>custom Nav2 behavior tree</strong>.
                     </div>
                     <div class="timeline-photo">
                         🤖
                     </div>
                 </div>
             </div>
-
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-text">
+                        <h3>Design Patent</h3>
+                        <p class="date">May 2026 | Indian Institute of Technology - Madras [IITM]</p>
+                        <p><strong>Design Patent granted</strong> for "A Master Device of a Teleoperation System and the
+                            Teleoperation System Thereof" (originally filed as a provisional patent for the Low-Cost
+                            Master Tool Manipulator [MTM]).</p>
+                        <p>[Patent Number: 589349 | Application Number: 202441043076]</p>
+                        <a class="view-details btn-link" style="margin-top: 0.5rem; cursor: pointer;"
+                            data-cert-src="assets/images/certificates/patent.png" data-cert-title="Patent Granted"
+                            data-cert-desc="Patent No: 589349 granted for 'A Master Device of a Teleoperation System and the Teleoperation System Thereof' (Application No: 202441043076) by the Patent Office, Government of India."
+                            onclick="openAchievementCert(this)"><span>View Patent Certificate</span></a>
+                    </div>
+                    <div class="timeline-photo">
+                        📃
+                    </div>
+                </div>
+            </div>
             <div class="timeline-item reveal">
                 <div class="timeline-content">
                     <div class="timeline-text">
@@ -186,19 +202,7 @@
                 </div>
             </div>
 
-            <div class="timeline-item reveal">
-                <div class="timeline-content">
-                    <div class="timeline-text">
-                        <h3>Provisional Patent Filed</h3>
-                        <p class="date">June 2024 | Indian Institute of Technology - Madras [IITM]</p>
-                        <p><strong>Provisional patent</strong> filed for Low-Cost Master Tool Manipulator [MTM].</p>
-                        <p>[Patent Application Number: 202441043076]</p>
-                    </div>
-                    <div class="timeline-photo">
-                        📃
-                    </div>
-                </div>
-            </div>
+
 
             <div class="timeline-item reveal">
                 <div class="timeline-content">
@@ -228,7 +232,23 @@
         <div class="projects-grid">
 
             <!-- === ➕ PASTE NEW PROJECT HERE (See templates/new_project_card.html) === -->
-
+            <div class="project-card reveal" onclick="window.location.href='projects/dqn-rl.html'">
+                <div class="project-image">
+                    <video src="assets/gifs/trickshot_rl.mp4" class="project-gif" autoplay loop muted playsinline
+                        loading="lazy" onerror="this.style.display='none'; this.parentElement.innerText='🧠'"></video>
+                </div>
+                <div class="project-info">
+                    <h3>Basketball TrickShot RL</h3>
+                    <p>RL agent for doing <strong>Basketball TrickShots in Mujoco</strong>.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Mujoco</span>
+                        <span class="tech-tag">Gymnasium</span>
+                        <span class="tech-tag">RL</span>
+                    </div>
+                    <span class="view-details btn-link"><span>Learn More</span></span>
+                </div>
+            </div>
             <div class="project-card reveal" onclick="window.location.href='projects/autonomous-robot.html'">
                 <div class="project-image">
                     <video src="assets/gifs/autonomous-robot.mp4" class="project-gif" autoplay loop muted playsinline
