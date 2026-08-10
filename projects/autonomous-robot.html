@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agricultural Robot | Portfolio</title>
+    <title>Autonomous Agricultural Robot | Portfolio</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0e27%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2255%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300d9ff%22>^_-</text></svg>">
     <link rel="stylesheet" href="../css/styles.css">
@@ -78,8 +78,10 @@
             <div class="tech-stack-icons">
                 <span class="tech-icon" title="ROS2">ROS2</span>
                 <span class="tech-icon" title="Nav2">Nav2</span>
-                <span class="tech-icon" title="Python">Python</span>
-                <span class="tech-icon" title="RL">RL</span>
+                <span class="tech-icon" title="DETR & PyTorch">DETR (PyTorch)</span>
+                <span class="tech-icon" title="TensorRT">TensorRT</span>
+                <span class="tech-icon" title="Livox LiDAR">Livox LiDAR</span>
+                <span class="tech-icon" title="Jetson Orin">Jetson Orin</span>
             </div>
         </header>
 
@@ -99,30 +101,25 @@
             <div class="bento-card col-span-2">
                 <h3>📝 Executive Summary</h3>
                 <p class="bento-text">
-                    This project focuses on <strong>autonomous navigation</strong> in <strong>unstructured agricultural
-                        environments</strong>, where
-                    robots must distinguish <strong>traversable vegetation</strong>, <strong>non-lethal
-                        obstacles</strong> (e.g., tall grass and
-                    branches), and <strong>lethal obstacles</strong> (e.g., humans and trees), while adapting to
-                    <strong>varying terrain
-                        traversability</strong>. I am developing a <strong>Nav2-based ROS stack</strong> for a
-                    <strong>UGV</strong> that fuses <strong>LiDAR and RGB-D data</strong> to
-                    generate <strong>adaptive semantic costmaps</strong> beyond traditional heightmaps for
-                    <strong>autonomous field navigation</strong>.
+                    Implemented a <strong>Follow-Me navigation system</strong> for agricultural environments using
+                    <strong>DEtection TRansformer (DETR)</strong> for person detection and <strong>TransReID</strong>
+                    for person re-identification, combined with <strong>person trajectory tracking</strong> and
+                    <strong>smart crop-row lane detection</strong>. Integrated with <strong>ROS2 Nav2 Behavior
+                        Trees</strong> for collision avoidance, the system robustly handles partial occlusions and
+                    enables autonomous operation in unstructured farm terrain without a pre-existing map.
                     <br><br>
-                    Right Now, I developed a <strong>follow-me feature</strong> capable of <strong>robust person
-                        tracking and trajectory prediction</strong> under
-                    multiple people and partial occlusions, along with a <strong>control algorithm</strong> to
-                    <strong>reduce slip and stall</strong>
-                    during turning, improving reliability on <strong>low-traction terrain</strong>.
+                    Fine-tuned DETR (PyTorch) on a custom dataset (+10% mAP and maskAP) and optimized both models using
+                    <strong>ONNX and TensorRT FP16 quantization</strong> to run on <strong>NVIDIA Jetson Orin at 18
+                        FPS</strong>. Developed a <strong>LiDAR-camera sensor fusion pipeline</strong> (Livox Mid-360)
+                    for precise spatial calibration and mapless field navigation.
                 </p>
             </div>
 
             <!-- Card 2: Key Stat (Tall) -->
             <div class="bento-card stat-card">
                 <div>
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Number of Human Interventions</span>
+                    <span class="stat-number">18 FPS</span>
+                    <span class="stat-label">On-Board Inference Speed (FP16 TensorRT)</span>
                 </div>
             </div>
 
@@ -130,15 +127,22 @@
             <div class="bento-card row-span-2">
                 <h3>🎯 Key Features</h3>
                 <ul class="bento-features">
-                    <li><strong>Follow-Me Mode</strong>: Robust person tracking and trajectory prediction even with
-                        occlusions (using Yolo11 and
-                        YoloE).</li>
-                    <li><strong>Unmaned Ground Vehicle</strong>: RigBetel Labs' Diadem.</li>
-                    <li><strong>Sensor Fusion</strong>: Velodyne LiDAR + Realsense RGB-D Camera [Diadem], <br>Livox
-                        Mid-360 Lidar
-                        + Realsense RGB-D Camera [Sonic].</li>
-                    <li><strong>RL Navigation</strong>: Custom PPO agent for terrain analysis.</li>
-                    <li><strong>Mapless</strong>: Operates without prior 2d occupancy grid static map.</li>
+                    <li><strong>Follow-Me System</strong>: DETR + TransReID for robust person detection &
+                        re-identification under partial occlusions.</li>
+                    <li><strong>Person Trajectory Tracking</strong>: Real-time trajectory prediction to smoothly follow
+                        the designated individual.</li>
+                    <li><strong>Smart Crop-Row Navigation</strong>: Vision-guided lane detection with plant-guided row
+                        turning logic.</li>
+                    <li><strong>FP16 TensorRT Optimization</strong>: Converted FP32 models to FP16 to reach 18 FPS on
+                        Jetson Orin without accuracy loss.</li>
+                    <li><strong>Model Fine-Tuning</strong>: +10% boost in mAP and maskAP for outdoor person detection on
+                        a custom dataset.</li>
+                    <li><strong>Nav2 Behavior Trees</strong>: Integrated collision avoidance without requiring a
+                        pre-existing 2D map.</li>
+                    <li><strong>Sensor Fusion Pipeline</strong>: Livox Mid-360 LiDAR + RGB-D camera calibration & frame
+                        alignment.</li>
+                    <li><strong>Unmanned Ground Vehicles</strong>: Deployed on RigBetel Labs' Diadem & Sonic platforms.
+                    </li>
                 </ul>
             </div>
 
@@ -156,51 +160,37 @@
             </div>
             <!-- Card 5: Media Showcase (Video) -->
             <div class="bento-card col-span-2 media-card-bento" onclick="playInlineVideo(this)"
-                data-video-src="https://www.youtube.com/embed/Sj1aFO0C5vw">
+                data-video-src="https://www.youtube.com/embed/6CtL3udbvPY">
                 <div class="video-placeholder media-placeholder"
                     style="background: linear-gradient(45deg, #2a2f4a, #1a1f3a);">
                     <div class="play-icon">▶</div>
                     <!-- Placeholder Text -->
                     <p>
-                        Follow Me Feature Demonstration [Diadem]</p>
+                        Person Reidentification Feature Using DeTr and TransReID
+                    </p>
                 </div>
                 <div class="media-caption-overlay">
-                    Follow Me Feature Demonstration [Diadem]</div>
-            </div>
-
-
-
-
-            <!-- Card 5: Media Showcase (Video) -->
-            <div class="bento-card col-span-2 media-card-bento" onclick="playInlineVideo(this)"
-                data-video-src="https://www.youtube.com/embed/GqqPnJxLiNE">
-                <div class="video-placeholder media-placeholder"
-                    style="background: linear-gradient(45deg, #2a2f4a, #1a1f3a);">
-                    <div class="play-icon">▶</div>
-                    <!-- Placeholder Text -->
-                    <p>
-                        Follow Me Feature Per Person Segmentation for Pose Estimation</p>
-                </div>
-                <div class="media-caption-overlay">
-                    Follow Me Feature Per Person Segmentation for Pose Estimation</div>
+                    Person Reidentification Feature Using DeTr and TransReID</div>
             </div>
 
             <!-- Card 6: Challenges -->
-            <div class="bento-card">
-                <h3>🚩 Challenges</h3>
+            <div class="bento-card col-span-2">
+                <h3>🚩 Key Highlights & Challenges</h3>
                 <p class="bento-text">
-                    Implementing a <strong>real-time, human-tracking, trajectory prediction and segmentation
-                        algorithm</strong> that ensures
-                    accurate,
-                    <strong>identity-consistent tracking</strong> of a <strong>designated person</strong> without
-                    <strong>mis-segmenting other individuals</strong> even
-                    under <strong>partial occlusions</strong>, enabling <strong>fast and safe decision-making</strong>
-                    within the <strong>Nav2 navigation
-                        framework</strong>.
-                    Researching optimal approaches to implement <strong>adaptive costmaps</strong> for agricultural
-                    fields using
-                    <strong>reinforcement learning</strong>, with a focus on <strong>safe operation</strong> in
-                    environments shared with humans.
+                    <strong>Model Optimization (FP32 &rarr; FP16 TensorRT):</strong> Evaluated FP32 baseline models
+                    initially on Jetson Orin, which struggled to deliver real-time frame rates. By quantizing both DETR
+                    and TransReID models to <strong>FP16 precision via ONNX & TensorRT</strong>, achieved an average
+                    inference speed of <strong>18 FPS</strong> without sacrificing detection accuracy or
+                    re-identification mAP (+10% outdoor mAP improvement).
+                    <br><br>
+                    <strong>Smart Lane Detection & Crop-Row Turning:</strong> Implemented a lidar-guided lane detection
+                    pipeline using plant rows as navigation guidelines. Designed smart lane-switching logic enabling the
+                    robot to detect the end of a row and autonomously execute turns into the next adjacent crop lane
+                    using the plant alignment as a guideline.
+                    <br><br>
+                    <strong>Target Re-ID & Occlusion Resilience:</strong> Solved severe visual occlusions in
+                    agricultural environments by combining TransReID feature embeddings with real-time person trajectory
+                    tracking, preventing target identity loss when workers pass behind dense foliage or equipment.
                 </p>
             </div>
 
@@ -243,7 +233,7 @@
         </div>
 
         <div class="project-actions">
-            <a href="../index.html#projects" class="btn btn-secondary back">Back to Projects</a>
+            <a href="fafo-rl.html" class="btn btn-secondary back">Previous Project</a>
             <a href="lcm_iitm.html" class="btn btn-primary">Next Project</a>
         </div>
 
