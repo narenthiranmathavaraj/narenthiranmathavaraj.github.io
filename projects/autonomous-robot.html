@@ -82,6 +82,9 @@
                 <span class="tech-icon" title="TensorRT">TensorRT</span>
                 <span class="tech-icon" title="Livox LiDAR">Livox LiDAR</span>
                 <span class="tech-icon" title="Jetson Orin">Jetson Orin</span>
+                <span class="tech-icon" title="FAST LIO">FAST LIO</span>
+                <span class="tech-icon" title="RTAB Map">RTAB Map</span>
+                <span class="tech-icon" title="MAVROS">MAVROS</span>
             </div>
         </header>
 
@@ -111,7 +114,10 @@
                     Fine-tuned DETR (PyTorch) on a custom dataset (+10% mAP and maskAP) and optimized both models using
                     <strong>ONNX and TensorRT FP16 quantization</strong> to run on <strong>NVIDIA Jetson Orin at 18
                         FPS</strong>. Developed a <strong>LiDAR-camera sensor fusion pipeline</strong> (Livox Mid-360)
-                    for precise spatial calibration and mapless field navigation. For localization, integrated FAST-LIO for LiDAR-inertial odometry, evaluated against RTAB-Map visual-inertial odometry, and selected FAST-LIO for production due to lower odometry drift; GPS data was ingested via MAVROS from a Pixhawk flight controller to support outdoor localization.
+                    for precise spatial calibration and mapless field navigation. For localization, integrated FAST-LIO
+                    for LiDAR-inertial odometry, evaluated against RTAB-Map visual-inertial odometry, and selected
+                    FAST-LIO for production due to lower odometry drift; GPS data was ingested via MAVROS from a Pixhawk
+                    flight controller to support outdoor localization.
                 </p>
             </div>
 
@@ -143,8 +149,10 @@
                         alignment.</li>
                     <li><strong>Unmanned Ground Vehicles</strong>: Deployed on RigBetel Labs' Diadem & Sonic platforms.
                     </li>
-                    <li><strong>FAST-LIO Localization</strong>: LiDAR-inertial odometry selected for production over RTAB-Map VIO due to lower drift.</li>
-                    <li><strong>GPS Integration (MAVROS)</strong>: Interfaced with Pixhawk flight controller to supplement localization with outdoor GPS data.</li>
+                    <li><strong>FAST-LIO Localization</strong>: LiDAR-inertial odometry selected for production over
+                        RTAB-Map VIO due to lower drift.</li>
+                    <li><strong>GPS Integration (MAVROS)</strong>: Interfaced with Pixhawk flight controller to
+                        supplement localization with outdoor GPS data.</li>
                 </ul>
             </div>
 
